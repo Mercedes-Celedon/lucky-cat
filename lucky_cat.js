@@ -13,10 +13,13 @@ const addNewName=() => {
   }
   const deleteBtn = document.createElement('button');
   deleteBtn.textContent = 'X';
-  const editBtn = document.createElement('button');
   deleteBtn.classList.add ('btn')
-  deleteBtn.addEventListener('click', deleteName );
+
+  const editBtn = document.createElement('button');
   editBtn.textContent = 'Y';
+  editBtn.classList.add("editB")
+  deleteBtn.addEventListener('click', deleteName );
+
  
   //editBtn.addEventListener('click', editName )
    
