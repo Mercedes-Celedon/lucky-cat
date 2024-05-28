@@ -1,35 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lucky cat</title>
-
+  <link rel="stylesheet" href="./title.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <header>
     <button id="button_sound"></button>
-    <h1>Lucky Cat</h1>
-    </header>
+    <div id="animation">
+      <div class="title_container">
+        <h1 id="title_game">Lucky Cat</h1>
+      </div>
+    </div>
+  </header>
   <main>
-    <div class="container">gi 
+    <div class="container">
       <div>
         <img src="" alt="">
       </div>
-    
-      <div>
-       <input type="text" id="names" placeholder="Ingrese su nombre"autofocus="on">
-       
-       
 
-       <button id="button_names">Agregar</button>
-       <ul id="list_names">
-       </ul>
-     </div>
- 
-     <div>
-       <img src="" alt="">
-     </div>
+      <div>
+        <input type="text" id="names" placeholder="Ingrese su nombre" autofocus="on">
+        <button id="button_names">Agregar</button>
+        <ul id="list_names">
+        </ul>
+      </div>
+
+      <div>
+        <img src="" alt="">
+      </div>
     </div>
     <div>
       <button id="lucky_match">
@@ -45,7 +51,7 @@
 
   </main>
 
-<script src="./lucky_cat.js"></script>
+  <script src="./lucky_cat.js"></script>
 </body>
-</html>
 
+</html>

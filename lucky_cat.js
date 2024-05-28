@@ -5,7 +5,8 @@ const addNewName=() => {
 /*   if(name.value === ""){
     alert("Type a name");
   }else{ */
-  
+
+ 
   li.textContent= name.value;
   lista.appendChild(li) 
   name.value="" 
