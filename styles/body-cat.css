@@ -1,0 +1,32 @@
+
+.cat-head, .cat-footer{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+     img{
+        width: 50%;
+     }
+}
+.cat-main{
+    height: 500px;
+    background-color: #FFDB89;
+    padding: 20px 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    input{
+        width: 60%;
+        height: 40px;
+        padding: 10px;
+    }
+    button{
+        width: 30%;
+        height: 40px;
+        padding: 10px;
+    }
+    ul{
+        padding: 20px 0;
+    }
+}
