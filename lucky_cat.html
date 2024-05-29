@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lucky cat</title>
   <link rel="stylesheet" href="./title.css">
+  <link rel="stylesheet" href="body-styles.css">
+  <link rel="stylesheet" href="styles-frases.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
@@ -16,30 +18,37 @@
     <button id="button_sound"></button>
     <div id="animation">
       <div class="title_container">
-        <h1 id="title_game">Lucky Cat</h1>
+        <h1 class="tracking-in-expand" id="title_game">Lucky Cat</h1>
       </div>
     </div>
   </header>
   <main>
+    <div>
+      <img src="" alt="">
+    </div>
+
     <div class="container">
-      <div>
-        <img src="" alt="">
+      <div class="cat-head">
+        <img src="./images/cara-gato.png" alt="cara de un gato amarillo con blanco de la suerte">
       </div>
-
-      <div>
+     
+      
+      <div class="cat-main">
         <input type="text" id="names" placeholder="Ingrese su nombre" autofocus="on">
-
         <button id="button_names">Agregar</button>
         <ul id="list_names">
         </ul>
-        <div id="container">
-
-        </div>
       </div>
+    </div>
 
-      <div>
-        <img src="" alt="">
-      </div>
+    <div id="container">
+      <!-- Aca aparecen los nombres con la frase la fortuna -->
+    </div>
+
+    <div class="cat-footer">
+      <img src="./images/pies-gato.png" alt="pies de un gato">
+    </div>
+
     </div>
     <div>
       <button id="lucky_match">

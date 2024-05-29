@@ -6,8 +6,6 @@ const addNewName = () => {
     return;
   }
 
-
-  
   let name = document.getElementById("names");
   let lista = document.getElementById("list_names");
   const li = document.createElement("li");
@@ -17,7 +15,7 @@ const addNewName = () => {
   } else {
     li.textContent = name.value;
   }
-/* 
+  /* 
   localStorage.setItem('playersName', JSON.stringify(playersName));
   console.log(playersName);
   */
@@ -44,11 +42,8 @@ const addNewName = () => {
   li.appendChild(editBtn);
   lista.appendChild(li);
   name.value = "";
-
-
 };
 document.getElementById("button_names").addEventListener("click", addNewName);
-
 
 let editAll = document.querySelectorAll(".btn-edit");
 for (const btn of editAll) {
@@ -119,31 +114,26 @@ const addRandomPhrase = () => {
     divMatch.appendChild(pPhrase);
     listaLucky.appendChild(divMatch);
   }
-  
+
+  //Agrega una clase al div del input, btn y nombres para ocultarlo y que solo se muestren las frases
+  let element = document.querySelector(".cat-main");
+  element.classList.add("hidden-element");
+
+ 
 };
+
+document.getElementById("button_names").addEventListener("click", addNewName);
+
 document
   .getElementById("lucky_match")
   .addEventListener("click", addRandomPhrase);
 
 
+// Solo letras y espacios (hay dos posibilidades)
 
-document.getElementById("button_names").addEventListener("click", addNewName);
-
-
-
-// Solo letras y espacios (hay dos posibilidades) 
-
-document.getElementById("names").addEventListener("keypress", function(event) {
+document.getElementById("names").addEventListener("keypress", function (event) {
   if (!/[a-zA-Z\sñÑ]/.test(String.fromCharCode(event.which))) {
-      alert("Invalid character");
-      event.preventDefault();
+    alert("Invalid character");
+    event.preventDefault();
   }
-
 });
-
-
-
-
-
-
-
