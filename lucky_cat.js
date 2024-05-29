@@ -61,4 +61,56 @@ function editName(event) {
   li.remove();
 }
 
+let listaLucky = document.getElementById("container"); // ul oraciones
+let sentences = [
+  "La suerte es la capacidad de aprovechar las oportunidades que se presentan.",
+  "La buena fortuna es el resultado de decisiones inteligentes tomadas en el momento adecuado.",
+  "La buena fortuna es como un invitado; si la invitas, vendrá.",
+  "La buena fortuna es la sonrisa del destino.",
+  "La suerte es un divino juego de azar.",
+  "No cuentes con la suerte, haz que la suerte cuente.",
+  "La suerte es la ayuda de la casualidad.",
+  "La suerte no es algo que puedas controlar. Puedes solo estar preparado para ello.",
+  "La buena fortuna siempre favorece a los valientes",
+  "La suerte es el resultado de la suma de todas tus decisiones.",
+  "La suerte no es más que el azar de encontrar oportunidades",
+  "La suerte es el cruce de la oportunidad con la preparación.",
+  "La buena fortuna es el sueño del hombre virtuoso.",
+  "La suerte es la residencia de la valentía.",
+];
+
+//función para generar oración  aleatoria
+const phrases = (max) => {
+  return Math.floor(Math.random() * max);
+};
+
+// función para agregar esa oración a una lista
+const addRandomPhrase = () => {
+  //Recorro el array de nombres por cada posición que me de una frase de la fortuna
+  for (let index = 0; index < playersName.length; index++) {
+    let randomIndex = phrases(sentences.length);
+    let randomPhrase = sentences[randomIndex];
+
+    const divMatch = document.createElement("div");
+    const pName = document.createElement("p");
+    pName.textContent = playersName[index];
+    const imgFortuna = document.createElement("img");
+    imgFortuna.classList.add("img-fortuna");
+    imgFortuna.src = "./images/galleta-de-la-fortuna.png";
+    const pPhrase = document.createElement("p");
+    pPhrase.innerText = randomPhrase;
+
+    divMatch.appendChild(pName);
+    divMatch.appendChild(imgFortuna);
+    divMatch.appendChild(pPhrase);
+    listaLucky.appendChild(divMatch);
+  }
+  
+};
+document
+  .getElementById("lucky_match")
+  .addEventListener("click", addRandomPhrase);
+
+
+
 document.getElementById("button_names").addEventListener("click", addNewName);
