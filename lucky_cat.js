@@ -17,9 +17,10 @@ const addNewName = () => {
   } else {
     li.textContent = name.value;
   }
-
+/* 
   localStorage.setItem('playersName', JSON.stringify(playersName));
   console.log(playersName);
+  */
 
   const deleteBtn = document.createElement("button");
   deleteBtn.textContent = "X";
