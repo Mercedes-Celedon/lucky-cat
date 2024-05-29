@@ -1,6 +1,13 @@
 let playersName = [];
 
 const addNewName = () => {
+  if (playersName.length >= 15) {
+    alert("15 players maximum");
+    return;
+  }
+
+
+  
   let name = document.getElementById("names");
   let lista = document.getElementById("list_names");
   const li = document.createElement("li");
@@ -10,6 +17,10 @@ const addNewName = () => {
   } else {
     li.textContent = name.value;
   }
+
+  localStorage.setItem('playersName', JSON.stringify(playersName));
+  console.log(playersName);
+
   const deleteBtn = document.createElement("button");
   deleteBtn.textContent = "X";
   deleteBtn.classList.add("btn");
@@ -31,7 +42,7 @@ const addNewName = () => {
   lista.appendChild(li);
   name.value = "";
 
-  //guardado= JSON.parse(localStorage.getItem('datos'));
+
 };
 document.getElementById("button_names").addEventListener("click", addNewName);
 
@@ -49,3 +60,31 @@ function deleteName(event) {
 }
 
 document.getElementById("button_names").addEventListener("click", addNewName);
+
+
+
+// Solo letras y espacios (hay dos posibilidades) 
+/*
+document.getElementById("names").addEventListener("keypress", function(event) {
+  if (!/[a-zA-Z\s]/.test(String.fromCharCode(event.which))) {
+      event.preventDefault();
+  }
+});
+*/
+
+/*
+document.getElementById("names").addEventListener("input", function() {
+  this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
+});
+*/
+
+/*
+document.getElementById("names").addEventListener("input", function() {
+  this.value = this.value.replace(/[^a-zA-Z\sñÑ]/g, '');
+});
+*/
+
+
+
+
+
