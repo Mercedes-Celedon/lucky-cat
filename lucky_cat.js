@@ -10,12 +10,12 @@ const addNewName=() => {
   li.textContent= name.value;
   }
   const deleteBtn = document.createElement('button');
-  deleteBtn.textContent = 'X';
+  //deleteBtn.textContent = 'X';
   deleteBtn.classList.add ('btn')
   deleteBtn.addEventListener('click', deleteName );
   
   const editBtn = document.createElement('button');
-  editBtn.textContent = 'Y';
+  //editBtn.textContent = 'Y';
   editBtn.classList.add('btn-edit')
   editBtn.addEventListener('click', editName )
    

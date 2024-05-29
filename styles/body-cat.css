@@ -1,32 +1,51 @@
+.cat-head, .cat-footer {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.cat-head img, .cat-footer img {
+  width: 50%;
+}
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.cat-main {
+  height: auto;
+  background-color: #FFDB89;
+  padding: 20px 0 30px;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.cat-main input {
+  width: 60%;
+  height: 16px;
+  padding: 10px;
+}
+.cat-main button {
+  width: 30%;
+  height: 40px;
+  padding: 10px;
+}
+.cat-main ul {
+  padding: 20px 0;
+}
+.btn-edit{
+  background-image:url('../images/icon-edit.png');
+}
+.btn{
+  background-image:url('../images/icon-trash.svg');
+}
+.btn, .btn-edit{
+  background-size:20px 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 5px;
+  border: #fff;
+}
 
-.cat-head, .cat-footer{
-    width: 100%;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-     img{
-        width: 50%;
-     }
-}
-.cat-main{
-    height: 500px;
-    background-color: #FFDB89;
-    padding: 20px 0;
-    width: 100%;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    input{
-        width: 60%;
-        height: 40px;
-        padding: 10px;
-    }
-    button{
-        width: 30%;
-        height: 40px;
-        padding: 10px;
-    }
-    ul{
-        padding: 20px 0;
-    }
-}
+/*# sourceMappingURL=body-cat.css.map */
