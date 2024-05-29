@@ -1,0 +1,34 @@
+body {
+  background-color: #fff6c3;
+}
+
+#animation {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 8px;
+  background: linear-gradient(90deg, yellow, lime, aqua, blue, magenta, red);
+  background-size: 200% 200%;
+  animation: 7s rotate linear infinite;
+
+  .title_container {
+    background-color: #850000;
+    border: 1px solid #ffdb89;
+    border-radius: 5px;
+  }
+
+  #title_game {
+    color: #ffffff;
+    text-align: center;
+    font-family: "Poetsen One";
+    font-size: 30px;
+    margin: 12px 30px;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    background-position-x: -200%;
+  }
+}
+
