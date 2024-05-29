@@ -132,25 +132,16 @@ document.getElementById("button_names").addEventListener("click", addNewName);
 
 
 // Solo letras y espacios (hay dos posibilidades) 
-/*
+
 document.getElementById("names").addEventListener("keypress", function(event) {
-  if (!/[a-zA-Z\s]/.test(String.fromCharCode(event.which))) {
+  if (!/[a-zA-Z\sñÑ]/.test(String.fromCharCode(event.which))) {
+      alert("Invalid character");
       event.preventDefault();
   }
-});
-*/
 
-/*
-document.getElementById("names").addEventListener("input", function() {
-  this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
 });
-*/
 
-/*
-document.getElementById("names").addEventListener("input", function() {
-  this.value = this.value.replace(/[^a-zA-Z\sñÑ]/g, '');
-});
-*/
+
 
 
 
