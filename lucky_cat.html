@@ -5,15 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lucky cat</title>
   <link rel="stylesheet" href="sonido.css">
-
 </head>
 <body>
   <header>
-    <audio id="audio" src="sonido/Trabaja Duro Juega Duro - Luna Cantina.mp3" type="audio/mpeg"></audio>
-    <button id="playPauseBTN" type="button" class="btn_sonido" onclick="playPause()">Play &#9658;</button>
-    &nbsp;
-    &nbsp;
-    <button onclick="stopAudio()" class="btn_sonido">Stop &#9611;</button>
+    <section>
+      <div  class="slide">  
+        <input type="checkbox" value="None" id="slide" name="check" checked />
+        <label for="slide"></label>
+      </div>
+    </section>
+    <audio id="audio" src="sonido/Trabaja Duro Juega Duro - Luna Cantina.mp3" loop></audio>
     <h1>Lucky Cat</h1>
     </header>
   <main>
@@ -23,32 +24,24 @@
       </div>
     
       <div>
-       <input type="text" id="names" placeholder="Ingrese su nombre"autofocus="on">
-       
-       
-
-       <button id="button_names">Agregar</button>
-       <ul id="list_names">
-       </ul>
-     </div>
- 
-     <div>
-       <img src="" alt="">
-     </div>
+      <input type="text" id="names" placeholder="Ingrese su nombre"autofocus="on">
+      <button id="button_names">Agregar</button>
+      <ul id="list_names">
+      </ul>
+    </div>
+<div>
+<img src="" alt="">
+</div>
     </div>
     <div>
       <button id="lucky_match">
         Lucky Match
       </button>
-
-      <button id="reset">
+<button id="reset">
         RESET
       </button>
-
-    </div>
-
-
-  </main>
+</div>
+</main>
 <script src="sonido.js"></script>
 <script src="./lucky_cat.js"></script>
 </body>

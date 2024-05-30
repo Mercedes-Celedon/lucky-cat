@@ -1,26 +1,16 @@
-const playPauseBTN = document.getElementById('playPauseBTN');
-        const audio = document.getElementById('audio');
-        let isPlaying = false;
 
-        function playPause() {
-            if (isPlaying) {
-                audio.pause();
-                playPauseBTN.innerHTML = "Play &#9658;";
-            } else {
-                audio.play();
-                playPauseBTN.innerHTML = "Pause &#9208;";
-            }
-            isPlaying = !isPlaying;
-        }
-
-        audio.onended = function() {
-            playPauseBTN.innerHTML = "Play &#9658;";
-            isPlaying = false;
-        }
-
-        function stopAudio() {
+document.addEventListener('DOMContentLoaded', function() {
+    const checkbox = document.getElementById('slide');
+    const audio = document.getElementById('audio');
+    audio.play();
+    checkbox.addEventListener('change', function() {
+        if (checkbox.checked) {
+            audio.play();
+        } else {
             audio.pause();
-            audio.currentTime = 0;
-            playPauseBTN.innerHTML = "Play &#9658;";
-            isPlaying = false;
         }
+    });
+});
+
+//usamos el DOMContentLoaded para asegurarse de que el DOM esté completamente cargado antes de ejecutar el código.
+//El evento change es el más apropiado para manejar los cambios en el estado del checkbox de manera efectiva.
