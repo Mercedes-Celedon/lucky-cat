@@ -1,4 +1,7 @@
 @media only screen and (min-width:600px) {
+    h2{
+        padding: 0 20px;
+    }
     main{
         width: 100%;
         display: flex;
@@ -10,7 +13,9 @@
         }
         .container{
             width: 60%;
-
+            .cat-head img, .cat-footer img{
+                width: 300px;
+            }
         }
         .buttons-lucky{
             width: 15%;
@@ -24,7 +29,5 @@
             }
         }
     }
-    .cat-head, .cat-footer{
-        width: 350px;
-    }
+    
 }
