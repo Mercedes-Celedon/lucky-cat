@@ -1,3 +1,11 @@
+:root{
+  --cream-light:#FFF6C3;
+  --cream:#FFDB89;
+  --red-strong:#850000;
+  --red-light:#DC0000;
+  --border-btn:10px;
+  --font-bold:bold;
+}
 .cat-head, .cat-footer {
   width: 100%;
   display: flex;
@@ -14,25 +22,42 @@
 }
 .cat-main {
   height: auto;
-  background-color: #FFDB89;
+  background-color: var(--cream);
   padding: 20px 0 30px;
   width: 90%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
-.cat-main input {
-  width: 60%;
-  height: 16px;
-  padding: 10px;
-}
-.cat-main button {
-  width: 30%;
-  height: 40px;
-  padding: 10px;
-}
-.cat-main ul {
-  padding: 20px 0;
+  align-content: flex-start;
+  padding: 20px 10px;
+  border-radius: var(--border-btn);
+  input {
+    width: 60%;
+    height: 16px;
+    padding: 10px;
+    border: 1px solid var(--red-strong);
+    border-radius: var(--border-btn);
+  }
+  #button_names {
+    width: 30%;
+    height: 40px;
+    padding: 10px;
+    background-color: var(--red-strong);
+    border: 1px solid var(--cream-light);
+    border-radius: var(--border-btn);
+    font-weight: bold;
+    color: var(--cream-light);
+  }
+  ul {
+    padding: 0;
+    width: 70%;
+      li{
+        list-style-type: none;
+        padding: 3px 0;
+        margin: 0;
+        font-weight: var(--font-bold);
+      }
+  }
 }
 .btn-edit{
   background-image:url('../images/icon-edit.png');
@@ -44,8 +69,11 @@
   background-size:20px 20px;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 5px;
+  padding: 10px 20px;
   border: #fff;
+  width: 30px;
+  height: 30px;
+  background-color: var(--cream);
 }
 
 /*# sourceMappingURL=body-cat.css.map */
