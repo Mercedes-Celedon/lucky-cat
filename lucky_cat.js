@@ -164,23 +164,6 @@ function reverse() {
 
 document.getElementById("back_arrow").addEventListener("click", reverse);
 
-// Boton reset
-// const resetPlay = () => {
-//   playersName = [];
-// const nameInput = document.getElementById("names");
-//   nameInput.value = "";
-// const lista = document.getElementById("list_names");
-//   lista.innerHTML = "";
-
-// Flecha atras se quita
-// const backButton = document.getElementById("back_arrow");
-//   if (backButton.style.display === "block") {
-//     backButton.style.display = "none";
-//   }
-// };
-
-// Agregar evento de clic al botón de reset
-// document.getElementById("reset").addEventListener("click", resetPlay);
 
 let lista = document.getElementById("list_names");
 
