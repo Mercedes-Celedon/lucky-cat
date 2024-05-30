@@ -6,9 +6,9 @@ const addNewName = () => {
     return;
   }
 
-
-  
+  //input para agregar nombres
   let name = document.getElementById("names");
+  //Ul donde voy a agregar los nombres de los jugadores
   let lista = document.getElementById("list_names");
   const li = document.createElement("li");
   if (name.value === "") {
@@ -17,18 +17,17 @@ const addNewName = () => {
   } else {
     li.textContent = name.value;
   }
-/* 
+  /* 
   localStorage.setItem('playersName', JSON.stringify(playersName));
   console.log(playersName);
   */
 
+
   const deleteBtn = document.createElement("button");
-  deleteBtn.textContent = "X";
   deleteBtn.classList.add("btn");
   deleteBtn.addEventListener("click", deleteName);
 
   const editBtn = document.createElement("button");
-  editBtn.textContent = "Y";
   editBtn.classList.add("btn-edit");
   editBtn.addEventListener("click", editName);
 
@@ -44,11 +43,10 @@ const addNewName = () => {
   li.appendChild(editBtn);
   lista.appendChild(li);
   name.value = "";
-
-
 };
-document.getElementById("button_names").addEventListener("click", addNewName);
 
+//Btn agregar nombres a la lista de jugadores
+document.getElementById("button_names").addEventListener("click", addNewName);
 
 let editAll = document.querySelectorAll(".btn-edit");
 for (const btn of editAll) {
@@ -75,7 +73,8 @@ function editName(event) {
   li.remove();
 }
 
-let listaLucky = document.getElementById("container"); // ul oraciones
+//Div donde apareceran los jugadores con sus frases de la fortuna
+let listaLucky = document.getElementById("container");
 let sentences = [
   "La suerte es la capacidad de aprovechar las oportunidades que se presentan.",
   "La buena fortuna es el resultado de decisiones inteligentes tomadas en el momento adecuado.",
@@ -112,38 +111,81 @@ const addRandomPhrase = () => {
     imgFortuna.classList.add("img-fortuna");
     imgFortuna.src = "./images/galleta-de-la-fortuna.png";
     const pPhrase = document.createElement("p");
-    pPhrase.innerText = randomPhrase;
+    pPhrase.textContent = randomPhrase;
 
     divMatch.appendChild(pName);
     divMatch.appendChild(imgFortuna);
     divMatch.appendChild(pPhrase);
     listaLucky.appendChild(divMatch);
   }
-  
+
+  //Agrega una clase al div del input, btn y nombres para ocultarlo 
+  let element = document.querySelector(".cat-main");
+  element.classList.add("hidden-element");
+
+  //Mostrar la flecha cuando se hace click boton de Lucky Match" - para retroceder una pantalla en el juego
+  let arrow = document.getElementById("back_arrow");
+  arrow.classList.add("display-block");
+
+  //Desabilita el boton para que no se pueda seguir jugando
+  document.getElementById("lucky_match").disabled = true;
 };
+
+//Con el botón de agregar, agregamos nombres a la lista
+document.getElementById("button_names").addEventListener("click", addNewName);
+
+//Con el botón de Lucky Match le damos a cada jugador su frase de la suerte
 document
   .getElementById("lucky_match")
   .addEventListener("click", addRandomPhrase);
 
-
-
-document.getElementById("button_names").addEventListener("click", addNewName);
-
-
-
-// Solo letras y espacios (hay dos posibilidades) 
-
-document.getElementById("names").addEventListener("keypress", function(event) {
+// Solo letras y espacios permitidos en el input (hay dos posibilidades)
+document.getElementById("names").addEventListener("keypress", function (event) {
   if (!/[a-zA-Z\sñÑ]/.test(String.fromCharCode(event.which))) {
-      alert("Invalid character");
-      event.preventDefault();
+    alert("Invalid character");
+    event.preventDefault();
   }
-
 });
 
+// Event listener para la tecla Enter en el input (para que agregue solo con enter sin pulsar)
+document.getElementById("names").addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    addNewName();
+  }
+});
 
+//Botón de flecha que vuelve al listado de nombres
+function reverse() {
+  let element = document.querySelector(".cat-main");
+  element.classList.remove("hidden-element");
+  let container = document.getElementById("container");
+  container.innerHTML = "";
+  document.getElementById("lucky_match").disabled = false;
+  let arrow = document.getElementById("back_arrow");
+  arrow.classList.remove("display-block");
+}
 
+document.getElementById("back_arrow").addEventListener("click", reverse);
 
+let lista = document.getElementById("list_names");
 
-
-
+const resetAll = () => {
+  //Borra el contenido del ul
+  listaLucky.innerHTML = "";
+  lista.innerHTML = "";
+  //Vacía los arrays de frases y nombres de jugadores
+  sentences.length = 0;
+  playersName.length = 0;
+  //Debe volver a mostrar el input y el btn agregar
+  let element = document.querySelector(".cat-main");
+  element.classList.remove("hidden-element");
+  //Vuelve a ocultar el botón de la flecha
+  let arrow = document.getElementById("back_arrow");
+  arrow.classList.remove("display-block");
+  //Habilita el btn de Lucky Match
+  document.getElementById("lucky_match").disabled = false;
+  //Limpia el input
+  const nameInput = document.getElementById("names");
+  nameInput.value = "";
+};
+document.getElementById("reset").addEventListener("click", resetAll);

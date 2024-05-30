@@ -8,45 +8,54 @@
   <link rel="stylesheet" href="../styles/body-cat.css" />
   <link rel="stylesheet" href="../styles/responsive-web.css" />
   <link rel="stylesheet" href="./title.css">
+  <link rel="stylesheet" href="body-styles.css">
+  <link rel="stylesheet" href="styles-frases.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
   <header>
     <button id="button_sound"></button>
     <div id="animation">
       <div class="title_container">
-        <h1 id="title_game">Lucky Cat</h1>
+        <h1 class="tracking-in-expand" id="title_game">Lucky Cat</h1>
       </div>
     </div>
   </header>
+
+
   <main>
     <aside class="back_arrow" id="back_arrow">
       <img src="/images/icons8-izquierda-48.png" alt="Go back">
     </aside>
-    <div class="container">
+
+    <!-- <div class="container"> -->
       <div class="cat-head">
         <img src="./images/cara-gato.png" alt="cara de un gato amarillo con blanco de la suerte">
       </div>
-    
-      <div class="cat-main">
-       <input type="text" id="names" placeholder="Ingrese su nombre"autofocus="on">
-       <button id="button_names">Agregar</button>
-       <h2><center>Ingresa de 1 a 15 nombres para comenzar a jugar</center></h2>
-       <ul id="list_names">
-       </ul>
-       <div id="container">
 
-       </div>
-     </div>
- 
-     <div class="cat-footer">
-       <img src="./images/pies-gato.png" alt="pies de un gato">
-     </div>
-    </div>
-    <div class="buttons-lucky">
+      <div class="cat-main">
+        <input type="text" id="names" placeholder="Ingrese su nombre" autofocus="on">
+        <button id="button_names">Agregar</button>
+        <h2>
+          <center>Ingresa de 1 a 15 nombres para comenzar a jugar</center>
+        </h2>
+        <ul id="list_names">
+          <!-- Aca se visualiza la lista de los jugadores -->
+        </ul>
+        
+      </div>
+      <div id="container">
+        <!-- Aca se visualizan las frases de la fortuna con los nombres -->
+      </div>
+      <div class="cat-footer">
+        <img src="./images/pies-gato.png" alt="pies de un gato">
+      </div>
+    <!-- </div> -->
+    <div>
       <button id="lucky_match">
         Lucky Match
       </button>
