@@ -5,6 +5,10 @@
   --red-light:#DC0000;
   --border-btn:10px;
   --font-bold:bold;
+  --font-family:"Poetsen One";
+}
+h2, p{
+  font-family: var(--font-family);
 }
 main{
   padding-top: 20px;
