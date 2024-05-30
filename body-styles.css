@@ -48,4 +48,11 @@
     border: #fff;
   }
 
+  .back_arrow {
+    display: none; 
+    cursor: pointer;
+    margin-bottom: 10px;
+    width: 25px;
+  }
+
  
