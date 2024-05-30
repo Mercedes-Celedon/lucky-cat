@@ -1,0 +1,19 @@
+@media only screen and (min-width:600px) {
+    main{
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        padding-top: 40px;
+        aside{
+            width: 5%;
+        }
+        .container{
+            width: 60%;
+
+        }
+        .buttons-lucky{
+            width: 15%;
+        }
+    }
+}

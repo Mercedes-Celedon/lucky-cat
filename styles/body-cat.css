@@ -6,6 +6,9 @@
   --border-btn:10px;
   --font-bold:bold;
 }
+main{
+  padding-top: 20px;
+}
 .cat-head, .cat-footer {
   width: 100%;
   display: flex;
