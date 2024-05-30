@@ -119,15 +119,21 @@ const addRandomPhrase = () => {
   let element = document.querySelector(".cat-main");
   element.classList.add("hidden-element");
 
- 
+  //Mostrar la flecha cuando se hace click boton de Lucky Match" - para retroceder una pantalla en el juego
+  let arrow = document.getElementById("back_arrow");
+  arrow.classList.add("display-block");
+
+  //Desabilita el boton para que no se pueda seguir jugando
+  document.getElementById("lucky_match").disabled = true;
 };
 
+//Con el botón de agregar, agregamos nombres a la lista
 document.getElementById("button_names").addEventListener("click", addNewName);
 
+//Con el botón de Lucky Match le damos a cada jugador su frase de la suerte
 document
   .getElementById("lucky_match")
   .addEventListener("click", addRandomPhrase);
-
 
 // Solo letras y espacios (hay dos posibilidades)
 
@@ -139,32 +145,62 @@ document.getElementById("names").addEventListener("keypress", function (event) {
 });
 
 // Event listener para la tecla Enter en el input (para que agregue solo con enter sin pulsar)
-document.getElementById("names").addEventListener("keypress", function(event) {
+document.getElementById("names").addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
     addNewName();
   }
 });
 
-// Mostrar la flecha cuando se hace click boton de Lucky Match"
-document.getElementById("lucky_match").addEventListener("click", () => {
-  document.getElementById("back_arrow").style.display = "block";
-});
+//Botón de flecha que vuelve al listado de nombres
+function reverse() {
+  let element = document.querySelector(".cat-main");
+  element.classList.remove("hidden-element");
+  let container = document.getElementById("container");
+  container.innerHTML = "";
+  document.getElementById("lucky_match").disabled = false;
+  let arrow = document.getElementById("back_arrow");
+  arrow.classList.remove("display-block");
+}
+
+document.getElementById("back_arrow").addEventListener("click", reverse);
 
 // Boton reset
-const resetPlay = () => {
-  playersName = [];
-const nameInput = document.getElementById("names");
-  nameInput.value = "";
-const lista = document.getElementById("list_names");
-  lista.innerHTML = "";
-
+// const resetPlay = () => {
+//   playersName = [];
+// const nameInput = document.getElementById("names");
+//   nameInput.value = "";
+// const lista = document.getElementById("list_names");
+//   lista.innerHTML = "";
 
 // Flecha atras se quita
-const backButton = document.getElementById("back_arrow");
-  if (backButton.style.display === "block") {
-    backButton.style.display = "none";
-  }
-};
+// const backButton = document.getElementById("back_arrow");
+//   if (backButton.style.display === "block") {
+//     backButton.style.display = "none";
+//   }
+// };
 
 // Agregar evento de clic al botón de reset
-document.getElementById("reset").addEventListener("click", resetPlay);
+// document.getElementById("reset").addEventListener("click", resetPlay);
+
+let lista = document.getElementById("list_names");
+
+const resetAll = () => {
+  //Borra el contenido del ul
+  listaLucky.innerHTML = "";
+  lista.innerHTML = "";
+  //Vacía los arrays de frases y nombres de jugadores
+  sentences.length = 0;
+  playersName.length = 0;
+  //Debe volver a mostrar el input y el btn agregar
+  let element = document.querySelector(".cat-main");
+  element.classList.remove("hidden-element");
+  //Vuelve a ocultar el botón de la flecha
+  let arrow = document.getElementById("back_arrow");
+  arrow.classList.remove("display-block");
+  //Habilita el btn de Lucky Match
+  document.getElementById("lucky_match").disabled = false;
+  //Limpia el input
+  const nameInput = document.getElementById("names");
+  nameInput.value = "";
+};
+document.getElementById("reset").addEventListener("click", resetAll);
