@@ -6,7 +6,9 @@ const addNewName = () => {
     return;
   }
 
+  //input para agregar nombres
   let name = document.getElementById("names");
+  //Ul donde voy a agregar los nombres de los jugadores
   let lista = document.getElementById("list_names");
   const li = document.createElement("li");
   if (name.value === "") {
@@ -20,13 +22,12 @@ const addNewName = () => {
   console.log(playersName);
   */
 
+
   const deleteBtn = document.createElement("button");
-  deleteBtn.textContent = "X";
   deleteBtn.classList.add("btn");
   deleteBtn.addEventListener("click", deleteName);
 
   const editBtn = document.createElement("button");
-  editBtn.textContent = "Y";
   editBtn.classList.add("btn-edit");
   editBtn.addEventListener("click", editName);
 
@@ -43,6 +44,8 @@ const addNewName = () => {
   lista.appendChild(li);
   name.value = "";
 };
+
+//Btn agregar nombres a la lista de jugadores
 document.getElementById("button_names").addEventListener("click", addNewName);
 
 let editAll = document.querySelectorAll(".btn-edit");
@@ -70,7 +73,8 @@ function editName(event) {
   li.remove();
 }
 
-let listaLucky = document.getElementById("container"); // ul oraciones
+//Div donde apareceran los jugadores con sus frases de la fortuna
+let listaLucky = document.getElementById("container");
 let sentences = [
   "La suerte es la capacidad de aprovechar las oportunidades que se presentan.",
   "La buena fortuna es el resultado de decisiones inteligentes tomadas en el momento adecuado.",
@@ -107,7 +111,7 @@ const addRandomPhrase = () => {
     imgFortuna.classList.add("img-fortuna");
     imgFortuna.src = "./images/galleta-de-la-fortuna.png";
     const pPhrase = document.createElement("p");
-    pPhrase.innerText = randomPhrase;
+    pPhrase.textContent = randomPhrase;
 
     divMatch.appendChild(pName);
     divMatch.appendChild(imgFortuna);
@@ -115,7 +119,7 @@ const addRandomPhrase = () => {
     listaLucky.appendChild(divMatch);
   }
 
-  //Agrega una clase al div del input, btn y nombres para ocultarlo y que solo se muestren las frases
+  //Agrega una clase al div del input, btn y nombres para ocultarlo 
   let element = document.querySelector(".cat-main");
   element.classList.add("hidden-element");
 
@@ -135,8 +139,7 @@ document
   .getElementById("lucky_match")
   .addEventListener("click", addRandomPhrase);
 
-// Solo letras y espacios (hay dos posibilidades)
-
+// Solo letras y espacios permitidos en el input (hay dos posibilidades)
 document.getElementById("names").addEventListener("keypress", function (event) {
   if (!/[a-zA-Z\sñÑ]/.test(String.fromCharCode(event.which))) {
     alert("Invalid character");
@@ -163,7 +166,6 @@ function reverse() {
 }
 
 document.getElementById("back_arrow").addEventListener("click", reverse);
-
 
 let lista = document.getElementById("list_names");
 

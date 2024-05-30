@@ -15,6 +15,7 @@
 </head>
 
 <body>
+
   <header>
     <button id="button_sound"></button>
     <div id="animation">
@@ -23,30 +24,36 @@
       </div>
     </div>
   </header>
+
+
   <main>
     <aside class="back_arrow" id="back_arrow">
       <img src="/images/icons8-izquierda-48.png" alt="Go back">
     </aside>
-    <div class="container">
+
+    <!-- <div class="container"> -->
       <div class="cat-head">
         <img src="./images/cara-gato.png" alt="cara de un gato amarillo con blanco de la suerte">
       </div>
-    
-      <div class="cat-main">
-       <input type="text" id="names" placeholder="Ingrese su nombre"autofocus="on">
-       <button id="button_names">Agregar</button>
-       <h2><center>Ingresa de 1 a 15 nombres para comenzar a jugar</center></h2>
-       <ul id="list_names">
-       </ul>
-       <div id="container">
 
-       </div>
-     </div>
- 
-     <div class="cat-footer">
-       <img src="./images/pies-gato.png" alt="pies de un gato">
-     </div>
-    </div>
+      <div class="cat-main">
+        <input type="text" id="names" placeholder="Ingrese su nombre" autofocus="on">
+        <button id="button_names">Agregar</button>
+        <h2>
+          <center>Ingresa de 1 a 15 nombres para comenzar a jugar</center>
+        </h2>
+        <ul id="list_names">
+          <!-- Aca se visualiza la lista de los jugadores -->
+        </ul>
+        
+      </div>
+      <div id="container">
+        <!-- Aca se visualizan las frases de la fortuna con los nombres -->
+      </div>
+      <div class="cat-footer">
+        <img src="./images/pies-gato.png" alt="pies de un gato">
+      </div>
+    <!-- </div> -->
     <div>
       <button id="lucky_match">
         Lucky Match

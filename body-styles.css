@@ -35,10 +35,10 @@
     padding: 20px 0;
   }
   .btn-edit{
-    background-image:url('./images/icons8-pencil-50.png');
+    background-image:url('../images/icon-edit.png');
   }
   .btn{
-    background-image:url('./images/icons8-basura-100.svg');
+    background-image:url('../images/icon-trash.svg');
   }
   .btn, .btn-edit{
     background-size:20px 20px;
