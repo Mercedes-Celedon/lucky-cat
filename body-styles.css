@@ -15,24 +15,20 @@
   .cat-main {
     height: auto;
     background-color: #FFDB89;
-    padding: 20px 0 30px;
-    width: 90%;
+    width: 85%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
   .cat-main input {
-    width: 60%;
+    width: 50%;
     height: 16px;
     padding: 10px;
+    margin-right: 12px;
   }
   .cat-main button {
-    width: 30%;
     height: 40px;
     padding: 10px;
-  }
-  .cat-main ul {
-    padding: 20px 0;
   }
   .btn-edit{
     background-image:url('../images/icon-edit.png');

@@ -1,5 +1,9 @@
 let playersName = [];
 
+//Esconde el contenedor de las frases
+let container = document.getElementById("container");
+container.classList.add("hidden-element");
+
 const addNewName = () => {
   if (playersName.length >= 15) {
     alert("15 players maximum");
@@ -22,7 +26,6 @@ const addNewName = () => {
   console.log(playersName);
   */
 
-
   const deleteBtn = document.createElement("button");
   deleteBtn.classList.add("btn");
   deleteBtn.addEventListener("click", deleteName);
@@ -38,6 +41,10 @@ const addNewName = () => {
 
   //Agrega un atributo al elemento li, después que lo agregamos al array
   li.setAttribute("data-position", playersName.length - 1);
+
+  //Quita el texto con las indiciaciones del juego
+  const inicialText = document.getElementById("inicial-text");
+  inicialText.classList.add("hidden-element");
 
   li.appendChild(deleteBtn);
   li.appendChild(editBtn);
@@ -105,12 +112,15 @@ const addRandomPhrase = () => {
     let randomPhrase = sentences[randomIndex];
 
     const divMatch = document.createElement("div");
+    divMatch.classList.add("container-phrases");
     const pName = document.createElement("p");
+    pName.classList.add("p-name");
     pName.textContent = playersName[index];
     const imgFortuna = document.createElement("img");
     imgFortuna.classList.add("img-fortuna");
     imgFortuna.src = "./images/galleta-de-la-fortuna.png";
     const pPhrase = document.createElement("p");
+    pPhrase.classList.add("p-phrase");
     pPhrase.textContent = randomPhrase;
 
     divMatch.appendChild(pName);
@@ -119,7 +129,11 @@ const addRandomPhrase = () => {
     listaLucky.appendChild(divMatch);
   }
 
-  //Agrega una clase al div del input, btn y nombres para ocultarlo 
+  //Muestra el contenedor de las frases
+  let container = document.getElementById("container");
+  container.classList.remove("hidden-element");
+
+  //Agrega una clase al div del input, btn y nombres para ocultarlo
   let element = document.querySelector(".cat-main");
   element.classList.add("hidden-element");
 
@@ -173,8 +187,8 @@ const resetAll = () => {
   //Borra el contenido del ul
   listaLucky.innerHTML = "";
   lista.innerHTML = "";
-  //Vacía los arrays de frases y nombres de jugadores
-  sentences.length = 0;
+  //Vacía el array de los nombres de jugadores
+  //sentences.length = 0;
   playersName.length = 0;
   //Debe volver a mostrar el input y el btn agregar
   let element = document.querySelector(".cat-main");
@@ -187,6 +201,12 @@ const resetAll = () => {
   //Limpia el input
   const nameInput = document.getElementById("names");
   nameInput.value = "";
+  //Muestra nuevamente las instrucciones del juego
+  const inicialText = document.getElementById("inicial-text");
+  inicialText.classList.remove("hidden-element");
+  //Esconde el contenedor de las frases
+  let container = document.getElementById("container");
+  container.classList.add("hidden-element");
 };
 document.getElementById("reset").addEventListener("click", resetAll);
 
