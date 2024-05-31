@@ -6,20 +6,28 @@ container.classList.add("hidden-element");
 
 const addNewName = () => {
   if (playersName.length >= 15) {
-    alert("15 players maximum");
+    swal("Atención", "el límite máximo de jugadores son de 15", "error", {
+      button: "Aceptar",
+    });
     return;
   }
 
   //input para agregar nombres
   let name = document.getElementById("names");
+
   //Ul donde voy a agregar los nombres de los jugadores
+  const spanLi = document.createElement("span");
+  spanLi.classList.add("span-li");
   let lista = document.getElementById("list_names");
   const li = document.createElement("li");
   if (name.value === "") {
-    alert("Type a name");
+    swal("Atención", "Escribe un nombre", "error", {
+      button: "Aceptar",
+    });
+
     return;
   } else {
-    li.textContent = name.value;
+    spanLi.textContent = name.value;
   }
   /* 
   localStorage.setItem('playersName', JSON.stringify(playersName));
@@ -29,7 +37,6 @@ const addNewName = () => {
   const deleteBtn = document.createElement("button");
   deleteBtn.classList.add("btn");
   deleteBtn.addEventListener("click", deleteName);
-
   const editBtn = document.createElement("button");
   editBtn.classList.add("btn-edit");
   editBtn.addEventListener("click", editName);
@@ -46,6 +53,7 @@ const addNewName = () => {
   const inicialText = document.getElementById("inicial-text");
   inicialText.classList.add("hidden-element");
 
+  li.appendChild(spanLi);
   li.appendChild(deleteBtn);
   li.appendChild(editBtn);
   lista.appendChild(li);
@@ -107,42 +115,52 @@ const phrases = (max) => {
 // función para agregar esa oración a una lista
 const addRandomPhrase = () => {
   //Recorro el array de nombres por cada posición que me de una frase de la fortuna
-  for (let index = 0; index < playersName.length; index++) {
-    let randomIndex = phrases(sentences.length);
-    let randomPhrase = sentences[randomIndex];
+  if (playersName.length >= 1) {
+    for (let index = 0; index < playersName.length; index++) {
+      let randomIndex = phrases(sentences.length);
+      let randomPhrase = sentences[randomIndex];
 
-    const divMatch = document.createElement("div");
-    divMatch.classList.add("container-phrases");
-    const pName = document.createElement("p");
-    pName.classList.add("p-name");
-    pName.textContent = playersName[index];
-    const imgFortuna = document.createElement("img");
-    imgFortuna.classList.add("img-fortuna");
-    imgFortuna.src = "./images/galleta-de-la-fortuna.png";
-    const pPhrase = document.createElement("p");
-    pPhrase.classList.add("p-phrase");
-    pPhrase.textContent = randomPhrase;
+      const divMatch = document.createElement("div");
+      divMatch.classList.add("container-phrases");
+      const nameContainer = document.createElement("div");
+      nameContainer.classList.add("name-container");
+      const pName = document.createElement("p");
+      pName.classList.add("p-name");
+      pName.textContent = playersName[index];
+      const phraseContainer = document.createElement("div");
+      phraseContainer.classList.add("phrase-container");
+      const imgFortuna = document.createElement("img");
+      imgFortuna.classList.add("img-fortuna");
+      imgFortuna.src = "./images/galleta-de-la-fortuna.png";
+      const pPhrase = document.createElement("p");
+      pPhrase.classList.add("p-phrase");
+      pPhrase.textContent = randomPhrase;
 
-    divMatch.appendChild(pName);
-    divMatch.appendChild(imgFortuna);
-    divMatch.appendChild(pPhrase);
-    listaLucky.appendChild(divMatch);
+      nameContainer.appendChild(pName);
+      phraseContainer.appendChild(imgFortuna);
+      phraseContainer.appendChild(pPhrase);
+      divMatch.appendChild(nameContainer);
+      divMatch.appendChild(phraseContainer);
+      listaLucky.appendChild(divMatch);
+    }
+
+    //Muestra el contenedor de las frases
+    let container = document.getElementById("container");
+    container.classList.remove("hidden-element");
+
+    //Agrega una clase al div del input, btn y nombres para ocultarlo
+    let element = document.querySelector(".cat-main");
+    element.classList.add("hidden-element");
+
+    //Mostrar la flecha cuando se hace click boton de Lucky Match" - para retroceder una pantalla en el juego
+    let arrow = document.getElementById("back_arrow");
+    arrow.classList.add("display-block");
+
+    //Desabilita el boton para que no se pueda seguir jugando
+    document.getElementById("lucky_match").disabled = true;
+  } else {
+    return;
   }
-
-  //Muestra el contenedor de las frases
-  let container = document.getElementById("container");
-  container.classList.remove("hidden-element");
-
-  //Agrega una clase al div del input, btn y nombres para ocultarlo
-  let element = document.querySelector(".cat-main");
-  element.classList.add("hidden-element");
-
-  //Mostrar la flecha cuando se hace click boton de Lucky Match" - para retroceder una pantalla en el juego
-  let arrow = document.getElementById("back_arrow");
-  arrow.classList.add("display-block");
-
-  //Desabilita el boton para que no se pueda seguir jugando
-  document.getElementById("lucky_match").disabled = true;
 };
 
 //Con el botón de agregar, agregamos nombres a la lista
@@ -210,9 +228,16 @@ const resetAll = () => {
 };
 document.getElementById("reset").addEventListener("click", resetAll);
 
-document.getElementById('reset').addEventListener('click', function() {
+document.getElementById("reset").addEventListener("click", function () {
   var button = this;
-  button.style.animation = 'none';
+  button.style.animation = "none";
   button.offsetHeight;
-  button.style.animation = '';
+  button.style.animation = "";
+});
+
+//Animacion cuando presionamos el botón de Lucky-Match
+const jsConfetti = new JSConfetti();
+const buttonConfetti = document.querySelector("#lucky_match");
+buttonConfetti.addEventListener("click", (e) => {
+  jsConfetti.addConfetti();
 });

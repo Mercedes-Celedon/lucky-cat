@@ -68,6 +68,12 @@ main{
         padding: 3px 0;
         margin: 0;
         font-weight: var(--font-bold);
+        display: flex;
+
+        span{
+          width: 40%;
+          font-family: "Poetsen One";
+        }
       }
   }
 }
@@ -96,4 +102,22 @@ main{
   gap: 20px;
 
  
+}
+.swal-text, .swal-title {
+  font-family: var(--font-family);
+}
+.swal-modal {
+  background-color: var(--cream);
+  border: 2px solid white;
+  border-radius: 5px;
+  width: 70%;
+}
+.swal-button {
+  height: 40px;
+  padding: 10px;
+  background-color: var(--red-strong);
+  border: 2px solid var(--cream-light);
+  border-radius: var(--border-btn);
+  font-weight: bold;
+  color: var(--cream-light);
 }

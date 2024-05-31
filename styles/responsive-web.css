@@ -1,32 +1,32 @@
-@media only screen and (min-width:700px) {
-    #animation{
-        width: 80%!important;
+@media only screen and (min-width: 700px) {
+  #animation {
+    width: 80% !important;
+  }
+  h2 {
+    padding: 0 20px;
+  }
+  main {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    padding-top: 40px;
+    aside {
+      width: 5%;
     }
-    h2{
-        padding: 0 20px;
+    .container {
+      width: 60%;
+      .cat-head img,
+      .cat-footer img {
+        width: 300px;
+      }
     }
-    main{
-        width: 100%;
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: center;
-        padding-top: 40px;
-        aside{
-            width: 5%;
-        }
-        .container{
-            width: 60%;
-            .cat-head img, .cat-footer img{
-                width: 300px;
-            }
-        }
-        .buttons-lucky{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            align-content: center;
-        }
+    .buttons-lucky {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
     }
-    
+  }
 }
