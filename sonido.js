@@ -26,5 +26,11 @@ catFace.addEventListener("mouseout", function () {
   catAudio.currentTime = 0;
 });
 
+const luckyBtn = document.getElementById("lucky_match");
+var luckyAudio = new Audio("./sounds/winner.mp3");
+luckyBtn.addEventListener("click", function () {
+  luckyAudio.play();
+});
+
 //usamos el DOMContentLoaded para asegurarse de que el DOM esté completamente cargado antes de ejecutar el código.
 //El evento change es el más apropiado para manejar los cambios en el estado del checkbox de manera efectiva.
