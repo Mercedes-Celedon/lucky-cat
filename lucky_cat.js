@@ -174,6 +174,7 @@ function reverse() {
   element.classList.remove("hidden-element");
   let container = document.getElementById("container");
   container.innerHTML = "";
+  container.classList.add("hidden-element");
   document.getElementById("lucky_match").disabled = false;
   let arrow = document.getElementById("back_arrow");
   arrow.classList.remove("display-block");

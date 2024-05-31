@@ -1,14 +1,14 @@
 
 const slideContainer = document.getElementById('slide-container')
-slideContainer.classList.add('color')
+slideContainer.classList.add('color-off')
 document.addEventListener('DOMContentLoaded', function() {
     const checkbox = document.getElementById('slide');
     const audio = document.getElementById('audio');
-    audio.play();
+    //audio.play();
     checkbox.addEventListener('change', function() {
         if (checkbox.checked) {
             audio.play();
-            slideContainer.classList.remove('color-off')
+            slideContainer.classList.add('color')
         } else {
             audio.pause();
             slideContainer.classList.add('color-off')
