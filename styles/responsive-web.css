@@ -1,4 +1,7 @@
 @media only screen and (min-width:600px) {
+    #animation{
+        width: 80%;
+    }
     h2{
         padding: 0 20px;
     }
