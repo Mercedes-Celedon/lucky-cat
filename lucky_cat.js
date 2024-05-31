@@ -209,3 +209,10 @@ const resetAll = () => {
   container.classList.add("hidden-element");
 };
 document.getElementById("reset").addEventListener("click", resetAll);
+
+document.getElementById('reset').addEventListener('click', function() {
+  var button = this;
+  button.style.animation = 'none';
+  button.offsetHeight;
+  button.style.animation = '';
+});
