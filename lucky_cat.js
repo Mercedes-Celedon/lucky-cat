@@ -188,7 +188,6 @@ const resetAll = () => {
   listaLucky.innerHTML = "";
   lista.innerHTML = "";
   //Vacía el array de los nombres de jugadores
-  //sentences.length = 0;
   playersName.length = 0;
   //Debe volver a mostrar el input y el btn agregar
   let element = document.querySelector(".cat-main");
