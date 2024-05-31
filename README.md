@@ -66,8 +66,6 @@ Lucky Cat is a simple web-based game where players can enter their names, and up
 
 2. Open the `index.html` file in your web browser to play the game.
 
-  
-
 ## Usage
 
 1. **Add Player Names:** Enter a player's name in the input field and click the "Add" button or press "Enter" to add the name to the list.
@@ -76,11 +74,12 @@ Lucky Cat is a simple web-based game where players can enter their names, and up
 
 3. **Delete Player Names:** Click the delete button next to a player's name to remove it from the list.
 
-4. **Assign Fortunes:** Click the "Lucky Match" button to assign a random fortune phrase to each player.
+5. **Assign Fortunes:** Click the "Lucky Match" button to assign a random fortune phrase to each player.
 
-5. **Reset the Game:** Click the "RESET" button to clear all player names and fortune phrases.
+6. **Navigate Back:** After clicking "Lucky Match", use the back arrow button to return to the player list. You can add, edit or delete players as long as the total does not exceed 15.
+
+7. **Reset the Game:** Click the "RESET" button to clear all player names and fortune phrases.
 
 --
 
 Enjoy playing Lucky Cat and may the fortune be in your favor!
-
