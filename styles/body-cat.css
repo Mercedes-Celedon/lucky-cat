@@ -11,7 +11,7 @@ h2, p{
   font-family: var(--font-family);
 }
 main{
-  padding-top: 20px;
+  padding-top: 50px;
 }
 .cat-head, .cat-footer {
   width: 100%;
@@ -42,7 +42,7 @@ main{
     width: 60%;
     height: 16px;
     padding: 10px;
-    border: 1px solid var(--red-strong);
+    border: 2px solid var(--red-strong);
     border-radius: var(--border-btn);
   }
   #button_names {
@@ -50,14 +50,19 @@ main{
     height: 40px;
     padding: 10px;
     background-color: var(--red-strong);
-    border: 1px solid var(--cream-light);
+    border: 2px solid var(--cream-light);
     border-radius: var(--border-btn);
     font-weight: bold;
     color: var(--cream-light);
   }
+  h2{
+    font-size: 15px;
+    text-align: center;
+    padding-top: 30px;
+  }
   ul {
     padding: 0;
-    width: 70%;
+    width: 85%;
       li{
         list-style-type: none;
         padding: 3px 0;
@@ -81,6 +86,16 @@ main{
   width: 30px;
   height: 30px;
   background-color: var(--cream);
+}
+
+.buttons-lucky{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  gap: 20px;
+
+ 
 }
 
 /*# sourceMappingURL=body-cat.css.map */
