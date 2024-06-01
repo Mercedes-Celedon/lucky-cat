@@ -7,10 +7,10 @@
   <title>Lucky cat</title>
   <link rel="icon" href="./images/cara-gato.png" type="icono de la página">
   <link rel="stylesheet" href="../styles/body-cat.css" />
-  <link rel="stylesheet" href="../styles/responsive-web.css" />
   <link rel="stylesheet" href="./styles/title.css">
   <link rel="stylesheet" href="./styles/styles-frases.css">
   <link rel="stylesheet" href="./styles/sonido.css">
+  <link rel="stylesheet" href="../styles/responsive-web.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
@@ -19,13 +19,13 @@
 <body>
 
   <header>
-    <section>
+    <section class="web-sound">
       <div id="slide-container" class="slide">
         <input type="checkbox" value="None" id="slide" name="check" checked />
         <label for="slide"></label>
       </div>
+      <audio autoplay id="audio" src="sounds/198836__bone666138__8-bit-circus.mp3" loop></audio>
     </section>
-    <audio autoplay id="audio" src="sounds/198836__bone666138__8-bit-circus.mp3" loop></audio>
     <div id="animation">
       <div class="title_container">
         <h1 class="tracking-in-expand" id="title_game">Lucky Cat</h1>
@@ -37,41 +37,40 @@
     <aside class="back_arrow" id="back_arrow">
       <img src="/images/icons8-izquierda-48.png" alt="Go back">
     </aside>
+    <section class="main_container">
+      <div class="container">
+        <div class="cat-head">
+          <img src="./images/cara-gato.png" alt="cara de un gato amarillo con blanco de la suerte">
+        </div>
 
-    <div class="container">
-      <div class="cat-head">
-        <img src="./images/cara-gato.png" alt="cara de un gato amarillo con blanco de la suerte">
+        <div class="cat-main">
+          <input type="text" id="names" placeholder="Ingrese su nombre" autofocus="on">
+          <button id="button_names">Agregar</button>
+          <h2 id="inicial-text">
+            Ingresa de 1 a 15 nombres <br> para comenzar a jugar
+          </h2>
+          <ul id="list_names">
+            <!-- Aca se visualiza la lista de los jugadores -->
+          </ul>
+
+        </div>
+        <div id="container">
+          <!-- Aca se visualizan las frases de la fortuna con los nombres -->
+        </div>
+        <div class="cat-footer">
+          <img src="./images/pies-gato.png" alt="pies de un gato">
+        </div>
       </div>
-
-      <div class="cat-main">
-        <input type="text" id="names" placeholder="Ingrese su nombre" autofocus="on">
-        <button id="button_names">Agregar</button>
-        <h2 id="inicial-text">
-          Ingresa de 1 a 15 nombres <br> para comenzar a jugar
-        </h2>
-        <ul id="list_names">
-          <!-- Aca se visualiza la lista de los jugadores -->
-        </ul>
-
+      
+      <div class="buttons-lucky">
+        <button id="lucky_match" class="heartbeat">
+          Lucky <br> Match
+        </button>
+        <button id="reset" class="btn-reset">
+          RESET
+        </button>
       </div>
-      <div id="container">
-        <!-- Aca se visualizan las frases de la fortuna con los nombres -->
-      </div>
-      <div class="cat-footer">
-        <img src="./images/pies-gato.png" alt="pies de un gato">
-      </div>
-    </div>
-    <div class="buttons-lucky">
-      <button id="lucky_match" class="heartbeat">
-        Lucky <br> Match
-      </button>
-
-      <button id="reset" class="btn-reset">
-        RESET
-      </button>
-
-    </div>
-
+    </section>
 
   </main>
   <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>

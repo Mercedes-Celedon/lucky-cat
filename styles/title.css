@@ -69,14 +69,13 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 107px;
-  height: 94px;
+  width: 110px;
+  height: 110px;
   background-color: #850000;
   border-radius: 50%;
-  text-align: center;
   color: white;
   font-size: 18px;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   font-family: "Poetsen One";
   border: 2px solid #ffdb89;
 }

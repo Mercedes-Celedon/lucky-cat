@@ -158,7 +158,16 @@ const addRandomPhrase = () => {
 
     //Desabilita el boton para que no se pueda seguir jugando
     document.getElementById("lucky_match").disabled = true;
+
+    //Animacion cuando presionamos el botón de Lucky-Match
+    const jsConfetti = new JSConfetti();
+    jsConfetti.addConfetti();
+
+    //Sonido que se reproduce cuando te dan la frase de la suerte
+    let luckyAudio = new Audio("./sounds/winner.mp3");
+    luckyAudio.play();
   } else {
+    alert("Debes ingresar nombres para comenzar a jugar");
     return;
   }
 };
@@ -233,11 +242,4 @@ document.getElementById("reset").addEventListener("click", function () {
   button.style.animation = "none";
   button.offsetHeight;
   button.style.animation = "";
-});
-
-//Animacion cuando presionamos el botón de Lucky-Match
-const jsConfetti = new JSConfetti();
-const buttonConfetti = document.querySelector("#lucky_match");
-buttonConfetti.addEventListener("click", (e) => {
-  jsConfetti.addConfetti();
 });

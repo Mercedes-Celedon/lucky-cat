@@ -1,32 +1,143 @@
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 768px) {
   #animation {
-    width: 80% !important;
+    width: 80%;
+    #title_game {
+      font-size: 40px;
+    }
   }
+
   h2 {
     padding: 0 20px;
   }
-  main {
+
+  .back_arrow {
+    img {
+      width: 12%;
+    }
+  }
+
+  .main_container {
     width: 100%;
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
+    align-items: center;
+    gap: 10px;
     padding-top: 40px;
-    aside {
-      width: 5%;
-    }
+
     .container {
       width: 60%;
       .cat-head img,
       .cat-footer img {
-        width: 300px;
+        width: 250px;
+      }
+      .cat-main {
+        input {
+          height: 25px;
+        }
+        #button_names {
+          height: 50px;
+          font-size: 16px;
+        }
+        h2 {
+          font-size: 20px;
+        }
+        li {
+          span {
+            font-size: 20px;
+          }
+        }
+      }
+      #container {
+        .container-phrases {
+          .p-name {
+            font-size: 16px;
+          }
+          img {
+            width: 10%;
+          }
+          .p-phrase {
+            font-size: 12px;
+          }
+        }
       }
     }
+  }
+
+  .buttons-lucky {
+    margin-top: 100px;
+    gap: 20px;
+    .btn-reset {
+      font-size: 20px;
+      width: 180px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #animation {
+    #title_game {
+      font-size: 50px;
+    }
+  }
+  .back_arrow {
+    img {
+      width: 10%;
+    }
+  }
+
+  .main_container {
+    .container {
+      width: 70%;
+      .cat-head img,
+      .cat-footer img {
+        width: 280px;
+      }
+      .cat-main {
+        ul {
+          li {
+            span {
+              width: 30%;
+              font-size: 25px;
+            }
+          }
+        }
+        input {
+          width: 50%;
+        }
+        #button_names {
+          font-size: 20px;
+        }
+        h2 {
+          font-size: 25px;
+        }
+      }
+      #container {
+        .container-phrases {
+          .p-name {
+            font-size: 25px;
+          }
+          img {
+            width: 10%;
+          }
+          .p-phrase {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+
     .buttons-lucky {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      align-content: center;
+      .heartbeat {
+        width: 140px;
+        height: 140px;
+        font-size: 25px;
+      }
+      .btn-reset {
+        font-size: 25px;
+        width: 200px;
+        height: 60px;
+      }
     }
   }
 }

@@ -1,32 +1,38 @@
-:root{
-  --cream-light:#FFF6C3;
-  --cream:#FFDB89;
-  --red-strong:#850000;
-  --red-light:#DC0000;
-  --border-btn:10px;
-  --font-bold:bold;
-  --font-family:"Poetsen One";
+:root {
+  --cream-light: #fff6c3;
+  --cream: #ffdb89;
+  --red-strong: #850000;
+  --red-light: #dc0000;
+  --border-btn: 10px;
+  --font-bold: bold;
+  --font-family: "Poetsen One";
 }
-h2, p{
+h2,
+p {
   font-family: var(--font-family);
 }
-main{
-  padding-top: 50px;
+
+.main_container {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
 }
-.cat-head, .cat-footer {
+
+.cat-head,
+.cat-footer {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-.cat-head img, .cat-footer img {
+.cat-head img,
+.cat-footer img {
   width: 50%;
 }
-.container{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+
 .cat-main {
   height: auto;
   background-color: var(--cream);
@@ -55,7 +61,7 @@ main{
     font-weight: bold;
     color: var(--cream-light);
   }
-  h2{
+  h2 {
     font-size: 15px;
     text-align: center;
     padding-top: 30px;
@@ -63,28 +69,29 @@ main{
   ul {
     padding: 0;
     width: 85%;
-      li{
-        list-style-type: none;
-        padding: 3px 0;
-        margin: 0;
-        font-weight: var(--font-bold);
-        display: flex;
+    li {
+      list-style-type: none;
+      padding: 3px 0;
+      margin: 0;
+      font-weight: var(--font-bold);
+      display: flex;
 
-        span{
-          width: 40%;
-          font-family: "Poetsen One";
-        }
+      span {
+        width: 40%;
+        font-family: "Poetsen One";
       }
+    }
   }
 }
-.btn-edit{
-  background-image:url('../images/icon-edit.png');
+.btn-edit {
+  background-image: url("../images/icon-edit.png");
 }
-.btn{
-  background-image:url('../images/icon-trash.svg');
+.btn {
+  background-image: url("../images/icon-trash.svg");
 }
-.btn, .btn-edit{
-  background-size:20px 20px;
+.btn,
+.btn-edit {
+  background-size: 20px 20px;
   background-position: center;
   background-repeat: no-repeat;
   padding: 10px 20px;
@@ -94,16 +101,15 @@ main{
   background-color: var(--cream);
 }
 
-.buttons-lucky{
+.buttons-lucky {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 30px;
   gap: 20px;
-
- 
 }
-.swal-text, .swal-title {
+.swal-text,
+.swal-title {
   font-family: var(--font-family);
 }
 .swal-modal {

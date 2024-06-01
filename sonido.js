@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-var catAudio = new Audio("./sounds/sound-cat-brr.mp3");
+let catAudio = new Audio("./sounds/sound-cat-brr.mp3");
 const catFace = document.querySelector(".cat-head");
 
 catFace.addEventListener("mouseover", function () {
@@ -26,11 +26,6 @@ catFace.addEventListener("mouseout", function () {
   catAudio.currentTime = 0;
 });
 
-const luckyBtn = document.getElementById("lucky_match");
-var luckyAudio = new Audio("./sounds/winner.mp3");
-luckyBtn.addEventListener("click", function () {
-  luckyAudio.play();
-});
 
 //usamos el DOMContentLoaded para asegurarse de que el DOM esté completamente cargado antes de ejecutar el código.
 //El evento change es el más apropiado para manejar los cambios en el estado del checkbox de manera efectiva.

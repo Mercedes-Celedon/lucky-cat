@@ -5,7 +5,7 @@
 .color-off{
     background-color: #850000;
 }
-section{
+.web-sound{
     display: flex;
     justify-content: flex-end;
 }
