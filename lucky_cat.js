@@ -29,10 +29,6 @@ const addNewName = () => {
   } else {
     spanLi.textContent = name.value;
   }
-  /* 
-  localStorage.setItem('playersName', JSON.stringify(playersName));
-  console.log(playersName);
-  */
 
   const deleteBtn = document.createElement("button");
   deleteBtn.classList.add("btn");
@@ -161,7 +157,11 @@ const addRandomPhrase = () => {
 
     //Animacion cuando presionamos el botón de Lucky-Match
     const jsConfetti = new JSConfetti();
-    jsConfetti.addConfetti();
+    jsConfetti.addConfetti({
+      emojis:["🥠", "🥠"], 
+      emojiSize: 35,
+      confettiNumber: 70
+  });
 
     //Sonido que se reproduce cuando te dan la frase de la suerte
     let luckyAudio = new Audio("./sounds/winner.mp3");
