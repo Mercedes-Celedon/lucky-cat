@@ -6,7 +6,7 @@ container.classList.add("hidden-element");
 
 const addNewName = () => {
   if (playersName.length >= 15) {
-    swal("Atención", "el límite máximo de jugadores son de 15", "error", {
+    swal("Atención", "El límite máximo es de 15 jugadores", "error", {
       button: "Aceptar",
     });
     return;
@@ -167,7 +167,9 @@ const addRandomPhrase = () => {
     let luckyAudio = new Audio("./sounds/winner.mp3");
     luckyAudio.play();
   } else {
-    alert("Debes ingresar nombres para comenzar a jugar");
+    swal("Atención", "Debes ingresar nombres para comenzar a jugar","error", {
+      button: "Aceptar",
+    });
     return;
   }
 };
@@ -183,7 +185,9 @@ document
 // Solo letras y espacios permitidos en el input (hay dos posibilidades)
 document.getElementById("names").addEventListener("keypress", function (event) {
   if (!/[a-zA-Z\sñÑ]/.test(String.fromCharCode(event.which))) {
-    alert("Invalid character");
+    swal("Atención", "Carácter inválido", "error", {
+      button: "Aceptar",
+    });
     event.preventDefault();
   }
 });
