@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
+//Efecto de sonido al pasar el mouse por la cara del gato 
 let catAudio = new Audio("./sounds/sound-cat-brr.mp3");
 const catFace = document.querySelector(".cat-head");
 
